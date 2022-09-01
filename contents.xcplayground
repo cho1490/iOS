@@ -3,5 +3,7 @@
     <pages>
         <page name='ARC Test'/>
         <page name='Class Struct'/>
+        <page name='Closure'/>
+        <page name='DispatchQueue'/>
     </pages>
 </playground>

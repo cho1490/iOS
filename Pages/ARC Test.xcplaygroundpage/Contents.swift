@@ -13,6 +13,7 @@ class Person {
 
     var apartment: Apartment?
     var changedApartment: ChangedApartment?
+    
     var name: String
     
     init(name: String) {
@@ -37,13 +38,14 @@ class Person {
  person2 = nil // person1 RC = 1
  person3 = nil // person1 RC = 0 / deinit
  */
- 
+
 
 
 /*
  순환 참조 : 두 개의 객체가 서로 참조하고 있는 형태를 말한다.
  강한 참조 순환 (Strong Reference Cycles Between Class Instances)
- 클래스의 인스턴스간 강하게 상호 참조를 하고 있는 경우 절대로 메모리에서 해제 되지 않는다.
+ ARC에서 참조 카운트를 증가시키는 것은 "강한 참조"이다.
+ 클래스의 인스턴스간 강하게 상호 참조를 하고 있는 경우 절대로 메모리에서 해제 되지 않는다.  
  */
 
 // MARK: - strong 참조
@@ -108,7 +110,7 @@ class ChangedApartment {
  var changedApartment1: ChangedApartment? = ChangedApartment(unit: "csh apartment")
 
  person1!.changedApartment = changedApartment1
- changedApartment1!.person = person1
+ changedApartment1!.person = person1 // weak var person: Person? -> RC 증가시키지 않음 (person1 RC = 1)
 
  person1 = nil // person1 RC = 0 / deinit
  changedApartment1 = nil // changedApartment1 RC = 0 / deinit
