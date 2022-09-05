@@ -131,6 +131,3 @@ func concurrent_async() {
 
 //concurrent_async()
 //concurrent_async()
-
-serial_async()
-concurrent_async()

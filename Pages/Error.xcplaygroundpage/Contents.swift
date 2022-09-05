@@ -33,6 +33,8 @@ func stringToInt(of text: String) throws -> Int {
 
 func main() {
     do {
+//        throw IntError.outOfRange
+//        throw IntError.notInt
         let number = try stringToInt(of: "ㅋ!")
         print("Number \(number)")
     } catch let error as IntError {
