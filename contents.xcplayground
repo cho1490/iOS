@@ -6,5 +6,6 @@
         <page name='Closure'/>
         <page name='DispatchQueue'/>
         <page name='Error'/>
+        <page name='Functional Programming'/>
     </pages>
 </playground>
