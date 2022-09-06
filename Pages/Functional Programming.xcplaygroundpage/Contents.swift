@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK: - 함수를 변수로 사용
+// MARK: - 함수를 매개변수로 사용
 func add(a: Int, b: Int) -> Int {
     return a + b
 }
@@ -31,7 +31,7 @@ calculation2(a: 2, b: 3, function: multiply)
 
 
 
-// ----------------------------------------------------- //
+// MARK: - 고차 함수 //
 struct Person {
     var name: String
     

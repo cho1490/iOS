@@ -4,8 +4,9 @@
         <page name='ARC Test'/>
         <page name='Class Struct'/>
         <page name='Closure'/>
-        <page name='DispatchQueue'/>
+        <page name='GCD (Grand Central Dispatch)'/>
         <page name='Error'/>
         <page name='Functional Programming'/>
+        <page name='Sync vs Async_Serial vs Concurrent'/>
     </pages>
 </playground>

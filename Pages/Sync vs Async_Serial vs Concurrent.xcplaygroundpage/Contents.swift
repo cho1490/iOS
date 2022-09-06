@@ -1,26 +1,5 @@
 import Foundation
 
-/*
- GCD
- Grand Central Dispatch (GCD)는 멀티코어와 프로세싱 환경에서 최적화된 프로그래밍을 할 수 있도록 애플이 개발한 기술.
- // DispatchQueue.main.sync
- // DispatchQueue.main.async
- // DispatchQueue.global().sync
- // DispatchQueue.golbal().async
- 
- Dispatch Queue는 작업을 연속적 혹은 동시에 진행하기는 하지만, FIFO(First-In, First-Out)로 언제나 먼저 들어오면 먼저 나가는 순서로 실행된다.
- 
- UI 작업은 Main Thread
- 네트워크 작업은 비동기
- 
- Serial / Concurrent - sync / async
- 직렬인데 비동기 일 수도 있고, 병렬인데 동기 일 수도 있다.
-
- * 직렬과 병렬은 한 번에 하나만 처리하느냐 동시에 여러 개 처리하느냐에 따라 구분지어지는 것이다.
-
- * 동기와 비동기는 처리가 끝날 때까지 기다리느냐 지시만 하고 다른 처리를 하느냐에 따라 구분 지어지는 것이다.
- */
-
 // MARK: - serial_sync
 func serial_sync() {
     print("serial_sync() Start !!!!!!!!!!!!!!!!!!!!!")
@@ -131,3 +110,4 @@ func concurrent_async() {
 
 //concurrent_async()
 //concurrent_async()
+
