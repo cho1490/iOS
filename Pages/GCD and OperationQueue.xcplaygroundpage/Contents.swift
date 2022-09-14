@@ -93,4 +93,7 @@ func globalAsyncTest() {
     }
 }
 
-mainSyncTest()
+mainSyncTest() // error
+mainAsyncTest()
+globalSyncTest()
+globalSyncTest()
