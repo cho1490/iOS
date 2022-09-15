@@ -11,6 +11,8 @@ import Foundation
 
 let mainQueue = DispatchQueue.main
 let queue = DispatchQueue.global()
+let queue2 = DispatchQueue.global(qos: .default)
+
 
 func mainSyncTest() {
     mainQueue.sync {
@@ -93,7 +95,7 @@ func globalAsyncTest() {
     }
 }
 
-mainSyncTest() // error
+//mainSyncTest() // error
 mainAsyncTest()
 globalSyncTest()
 globalSyncTest()
