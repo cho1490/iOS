@@ -10,9 +10,7 @@ import Foundation
  */
 
 let mainQueue = DispatchQueue.main
-let queue = DispatchQueue.global()
-let queue2 = DispatchQueue.global(qos: .default)
-
+let globalQueue = DispatchQueue.global() // DispatchQueue.global(qos: .default)
 
 func mainSyncTest() {
     mainQueue.sync {
@@ -56,19 +54,19 @@ func mainAsyncTest() {
 }
 
 func globalSyncTest() {
-    queue.sync {
+    globalQueue.sync {
         print("조상횬")
         sleep(3)
         print("조상횬 !")
     }
     
-    queue.sync {
+    globalQueue.sync {
         print("조상횬2")
         sleep(3)
         print("조상횬2 !")
     }
     
-    queue.sync {
+    globalQueue.sync {
         print("조상횬3")
         sleep(3)
         print("조상횬3 !")
@@ -76,26 +74,62 @@ func globalSyncTest() {
 }
 
 func globalAsyncTest() {
-    queue.async {
+    globalQueue.async {
         print("조상횬")
         sleep(3)
         print("조상횬 !")
     }
     
-    queue.async {
+    globalQueue.async {
         print("조상횬2")
         sleep(3)
         print("조상횬2 !")
     }
     
-    queue.async {
+    globalQueue.async {
         print("조상횬3")
         sleep(3)
         print("조상횬3 !")
     }
 }
 
-//mainSyncTest() // error
-mainAsyncTest()
-globalSyncTest()
-globalSyncTest()
+//mainSyncTest() // 데드락!
+//mainAsyncTest()
+//globalSyncTest()
+//globalSyncTest()
+
+
+// MARK: - GROUP
+let myGroup = DispatchGroup()
+
+func groupTest() {
+    globalQueue.async(group: myGroup) {
+        print("상횬 1")
+        sleep(5)
+        print("상횬 1 끝")
+    }
+    
+    globalQueue.async(group: myGroup) {
+        print("상횬 2")
+        myGroup.enter()
+        globalQueue.async {
+            print("상횬 4")
+            sleep(10)
+            print("상횬 4 끝")
+            myGroup.leave()
+        }
+        print("상횬 2 끝")
+    }
+    
+    globalQueue.async(group: myGroup) {
+        print("상횬 3")
+        sleep(2)
+        print("상횬 3 끝")
+    }
+    
+    myGroup.notify(queue: .main) {
+        print("상횬 끝")
+    }
+}
+
+groupTest()
