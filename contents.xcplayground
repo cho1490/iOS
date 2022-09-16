@@ -4,7 +4,7 @@
         <page name='ARC Test'/>
         <page name='Class Struct'/>
         <page name='Closure'/>
-        <page name='GCD and OperationQueue'/>
+        <page name='GCD'/>
         <page name='Error'/>
         <page name='Functional Programming'/>
         <page name='Sync vs Async_Serial vs Concurrent'/>
