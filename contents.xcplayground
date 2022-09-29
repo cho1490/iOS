@@ -9,5 +9,6 @@
         <page name='Functional Programming'/>
         <page name='Sync vs Async_Serial vs Concurrent'/>
         <page name='Class Struct Performance'/>
+        <page name='Integrity'/>
     </pages>
 </playground>
